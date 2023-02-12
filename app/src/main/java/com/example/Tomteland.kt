@@ -1,10 +1,10 @@
 package com.example
 
-class Tomteland {
+class Tomteland() {
     private val nodes: Node<String>
 
-    constructor() {
-        val nodes = Node<String>("Tomten")
+    init {
+        val nodes = Node("Tomten")
         nodes.add(Node("Glader"),"Tomten")
         nodes.add(Node("Butter"),"Tomten")
         nodes.add(Node("Tröger"),"Glader")
@@ -21,4 +21,10 @@ class Tomteland {
         nodes.add(Node("Bladlusen"),"Myran")
         this.nodes = nodes
     }
+
+    fun getUnderlings(name: String, list: MutableList<String>): List<String> {
+        nodes.getChildren(name, list)
+        return list
+    }
+
 }
