@@ -29,7 +29,6 @@ public class TomtelandTest {
     final void getUnderlingsMyranTest(){
         List<String> list = new ArrayList<>();
         List<String> underlings = tl.getUnderlings("Myran", list);
-        System.out.println(underlings);
         assertEquals(underlings.size(), uMyran.size());
         assertFalse(underlings.retainAll(uMyran));
     }
